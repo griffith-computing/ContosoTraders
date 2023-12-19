@@ -4,6 +4,12 @@
   "parameters": {
     "aksLinuxAdminUsername": {
       "value": "localadmin"
+    },
+    "prefixHyphenated": {
+      "value": "contoso-traders-sg"
+    },
+    "prefix": {
+      "value": "contosotraderssg"
     }
   }
 }
