@@ -16,30 +16,30 @@ on:
 env:
   # You can specify any location for `SUB_DEPLOYMENT_REGION`. It's the region where the deployment
   # metadata will be stored, and not where the resource groups will be deployed.
-  ACR_NAME: contosotradersacr
-  AKS_CLUSTER_NAME: contoso-traders-aks
+  ACR_NAME: contosotraderssgacr
+  AKS_CLUSTER_NAME: contoso-traders-sg-aks
   AKS_DNS_LABEL: contoso-traders-products
-  AKS_NODES_RESOURCE_GROUP_NAME: contoso-traders-aks-nodes-rg
+  AKS_NODES_RESOURCE_GROUP_NAME: contoso-traders-sg-aks-nodes-rg
   AKS_SECRET_NAME_ACR_PASSWORD: contoso-traders-acr-password
   AKS_SECRET_NAME_KV_ENDPOINT: contoso-traders-kv-endpoint
   AKS_SECRET_NAME_MI_CLIENTID: contoso-traders-mi-clientid
-  CARTS_ACA_NAME: contoso-traders-carts
+  CARTS_ACA_NAME: contoso-traders-sg-carts
   CARTS_ACR_REPOSITORY_NAME: contosotradersapicarts
-  CDN_PROFILE_NAME: contoso-traders-cdn
+  CDN_PROFILE_NAME: contoso-traders-sg-cdn
   SUB_DEPLOYMENT_REGION: eastus2
   KV_NAME: contosotraderssgkv
   PRODUCTS_ACR_REPOSITORY_NAME: contosotradersapiproducts
   PRODUCTS_DB_NAME: productsdb
-  PRODUCTS_DB_SERVER_NAME: contoso-traders-products
+  PRODUCTS_DB_SERVER_NAME: contoso-traders-sg-products
   PRODUCTS_DB_USER_NAME: localadmin
   PRODUCT_DETAILS_CONTAINER_NAME: product-details
-  PRODUCT_IMAGES_STORAGE_ACCOUNT_NAME: contosotradersimg
+  PRODUCT_IMAGES_STORAGE_ACCOUNT_NAME: contosotraderssgimg
   PRODUCT_LIST_CONTAINER_NAME: product-list
   PRODUCTS_CDN_ENDPOINT_NAME: contoso-traders-images
   RESOURCE_GROUP_NAME: contoso-traders-rg
-  STORAGE_ACCOUNT_NAME: contosotradersimg
+  STORAGE_ACCOUNT_NAME: contosotraderssgimg
   UI_CDN_ENDPOINT_NAME: contoso-traders-ui2
-  UI_STORAGE_ACCOUNT_NAME: contosotradersui2
+  UI_STORAGE_ACCOUNT_NAME: contosotraderssgui2
   USER_ASSIGNED_MANAGED_IDENTITY_NAME: contoso-traders-mi-kv-access
 
 jobs:
