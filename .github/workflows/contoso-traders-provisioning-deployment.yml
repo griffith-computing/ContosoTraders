@@ -27,7 +27,7 @@ env:
   CARTS_ACR_REPOSITORY_NAME: contosotradersapicarts
   CDN_PROFILE_NAME: contoso-traders-cdn
   SUB_DEPLOYMENT_REGION: eastus2
-  KV_NAME: contosotraderskv
+  KV_NAME: contosotraderssgkv
   PRODUCTS_ACR_REPOSITORY_NAME: contosotradersapiproducts
   PRODUCTS_DB_NAME: productsdb
   PRODUCTS_DB_SERVER_NAME: contoso-traders-products
