@@ -885,7 +885,7 @@ resource cognitiveservice 'Microsoft.CognitiveServices/accounts@2022-10-01' = {
   location: resourceLocation
   tags: resourceTags
   sku: {
-    name: 'S0'
+    name: 'S1'
   }
   kind: 'ComputerVision'
   properties: {
