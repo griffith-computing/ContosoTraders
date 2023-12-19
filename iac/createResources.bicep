@@ -672,6 +672,9 @@ resource productimagesstgacc 'Microsoft.Storage/storageAccounts@2022-05-01' = {
     name: 'Standard_LRS'
   }
   kind: 'StorageV2'
+  properties: {
+    allowBlobPublicAccess: true
+  }
 
   // blob service
   resource productimagesstgacc_blobsvc 'blobServices' = {
