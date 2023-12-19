@@ -887,7 +887,7 @@ resource cognitiveservice 'Microsoft.CognitiveServices/accounts@2022-10-01' = {
   sku: {
     name: 'S0'
   }
-  kind: 'CognitiveServices'
+  kind: 'ComputerVision'
   properties: {
     publicNetworkAccess: 'Enabled'
   }
