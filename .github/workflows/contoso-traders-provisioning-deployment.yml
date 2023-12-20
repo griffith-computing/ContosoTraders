@@ -331,7 +331,7 @@ jobs:
         run: npm install
         working-directory: src/ContosoTraders.Ui.Website
       - name: npm audit fix
-        run: npm audit fix --force
+        run: npm audit fix
         working-directory: src/ContosoTraders.Ui.Website
       - name: npm run build
         run: npm run build
