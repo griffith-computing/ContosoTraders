@@ -18,7 +18,7 @@ env:
   # metadata will be stored, and not where the resource groups will be deployed.
   ACR_NAME: contosotraderssgacr
   AKS_CLUSTER_NAME: contoso-traders-sg-aks
-  AKS_DNS_LABEL: contoso-traders-products
+  AKS_DNS_LABEL: contoso-traders-products-sg
   AKS_NODES_RESOURCE_GROUP_NAME: contoso-traders-sg-aks-nodes-rg
   AKS_SECRET_NAME_ACR_PASSWORD: contoso-traders-acr-password
   AKS_SECRET_NAME_KV_ENDPOINT: contoso-traders-kv-endpoint
