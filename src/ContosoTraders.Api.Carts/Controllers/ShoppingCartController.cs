@@ -1,10 +1,14 @@
-﻿namespace ContosoTraders.Api.Carts.Controllers;
+﻿using Microsoft.ApplicationInsights;
+
+namespace ContosoTraders.Api.Carts.Controllers;
 
 [Route("v1/[controller]")]
 public class ShoppingCartController : ContosoTradersControllerBase
 {
-    public ShoppingCartController(IMediator mediator) : base(mediator)
+    protected TelemetryClient telemetryClient; 
+    public ShoppingCartController(IMediator mediator, TelemetryClient telemetryClient) : base(mediator)
     {
+        this.telemetryClient = telemetryClient;
     }
 
     /// <summary>
@@ -14,6 +18,7 @@ public class ShoppingCartController : ContosoTradersControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<IActionResult> GetCart([FromHeader(Name = RequestHeaderConstants.HeaderNameUserEmail)] string userEmail)
     {
+        telemetryClient.TrackTrace("Getting Cart data.");
         var request = new GetCartRequest
         {
             Email = userEmail?.ToLowerInvariant()
@@ -26,6 +31,7 @@ public class ShoppingCartController : ContosoTradersControllerBase
     [ProducesResponseType(StatusCodes.Status201Created)]
     public async Task<IActionResult> AddItemToCart([FromBody] CartDto cartDto)
     {
+        telemetryClient.TrackTrace("Add Item to Cart.");
         var request = new AddItemToCartRequest
         {
             CartItem = cartDto
