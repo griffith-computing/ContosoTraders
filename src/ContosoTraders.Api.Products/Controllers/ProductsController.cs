@@ -1,11 +1,16 @@
-﻿namespace ContosoTraders.Api.Products.Controllers;
+﻿using System.Diagnostics;
+using Microsoft.ApplicationInsights;
+
+namespace ContosoTraders.Api.Products.Controllers;
 
 [Route("v1/[controller]")]
 [Produces("application/json")]
 public class ProductsController : ContosoTradersControllerBase
 {
-    public ProductsController(IMediator mediator) : base(mediator)
+    protected TelemetryClient telemetryClient;
+    public ProductsController(IMediator mediator, TelemetryClient telemetryClient) : base(mediator)
     {
+        this.telemetryClient = telemetryClient;
     }
 
 
@@ -15,11 +20,18 @@ public class ProductsController : ContosoTradersControllerBase
         [FromQuery(Name = "brand")] int[] brands,
         [FromQuery(Name = "type")] string[] types)
     {
+        telemetryClient.TrackTrace("Obtaining All Products");
+
+        Stopwatch stopwatch = new Stopwatch();
+        stopwatch.Start();
         var request = new GetProductsRequest
         {
             Brands = brands,
             Types = types
         };
+        stopwatch.Stop();
+
+        telemetryClient.TrackMetric("Obtain Products", stopwatch.ElapsedMilliseconds);
 
         return await ProcessHttpRequestAsync(request);
     }
@@ -30,6 +42,7 @@ public class ProductsController : ContosoTradersControllerBase
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetProduct(int id)
     {
+        telemetryClient.TrackTrace($"Get Details for Product: {id}");
         var request = new GetProductRequest
         {
             ProductId = id
@@ -69,10 +82,18 @@ public class ProductsController : ContosoTradersControllerBase
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> Search(string text)
     {
+        telemetryClient.TrackTrace($"Searching for Product: {text}");
+
+        Stopwatch stopwatch = new Stopwatch();
+        stopwatch.Start();
+
         var request = new SearchTextRequest
         {
             Text = text
         };
+
+        stopwatch.Stop();
+        telemetryClient.TrackMetric("Search Products", stopwatch.ElapsedMilliseconds);
 
         return await ProcessHttpRequestAsync(request);
     }
