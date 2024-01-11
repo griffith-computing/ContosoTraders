@@ -16,31 +16,31 @@ on:
 env:
   # You can specify any location for `SUB_DEPLOYMENT_REGION`. It's the region where the deployment
   # metadata will be stored, and not where the resource groups will be deployed.
-  ACR_NAME: contosotraderssgacr
-  AKS_CLUSTER_NAME: contoso-traders-sg-aks
-  AKS_DNS_LABEL: contoso-traders-products-sg
-  AKS_NODES_RESOURCE_GROUP_NAME: contoso-traders-sg-aks-nodes-rg
+  ACR_NAME: contosotraderssagacr
+  AKS_CLUSTER_NAME: contoso-traders-sag-aks
+  AKS_DNS_LABEL: contoso-traders-products-sag
+  AKS_NODES_RESOURCE_GROUP_NAME: contoso-traders-sag-aks-nodes-rg
   AKS_SECRET_NAME_ACR_PASSWORD: contoso-traders-acr-password
   AKS_SECRET_NAME_KV_ENDPOINT: contoso-traders-kv-endpoint
   AKS_SECRET_NAME_MI_CLIENTID: contoso-traders-mi-clientid
-  CARTS_ACA_NAME: contoso-traders-sg-carts
+  CARTS_ACA_NAME: contoso-traders-sag-carts
   CARTS_ACR_REPOSITORY_NAME: contosotradersapicarts
-  CDN_PROFILE_NAME: contoso-traders-sg-cdn
+  CDN_PROFILE_NAME: contoso-traders-sag-cdn
   SUB_DEPLOYMENT_REGION: eastus2
-  KV_NAME: contosotraderssgkv
+  KV_NAME: contosotraderssagkv
   PRODUCTS_ACR_REPOSITORY_NAME: contosotradersapiproducts
   PRODUCTS_DB_NAME: productsdb
-  PRODUCTS_DB_SERVER_NAME: contoso-traders-sg-products
+  PRODUCTS_DB_SERVER_NAME: contoso-traders-sag-products
   PRODUCTS_DB_USER_NAME: localadmin
   PRODUCT_DETAILS_CONTAINER_NAME: product-details
-  PRODUCT_IMAGES_STORAGE_ACCOUNT_NAME: contosotraderssgimg
+  PRODUCT_IMAGES_STORAGE_ACCOUNT_NAME: contosotraderssagimg
   PRODUCT_LIST_CONTAINER_NAME: product-list
-  PRODUCTS_CDN_ENDPOINT_NAME: contoso-traders-sg-images
+  PRODUCTS_CDN_ENDPOINT_NAME: contoso-traders-sag-images
   RESOURCE_GROUP_NAME: contoso-traders-rg
-  STORAGE_ACCOUNT_NAME: contosotraderssgimg
-  UI_CDN_ENDPOINT_NAME: contoso-traders-sg-ui2
-  UI_STORAGE_ACCOUNT_NAME: contosotraderssgui2
-  USER_ASSIGNED_MANAGED_IDENTITY_NAME: contoso-traders-sg-mi-kv-access
+  STORAGE_ACCOUNT_NAME: contosotraderssagimg
+  UI_CDN_ENDPOINT_NAME: contoso-traders-sag-ui2
+  UI_STORAGE_ACCOUNT_NAME: contosotraderssagui2
+  USER_ASSIGNED_MANAGED_IDENTITY_NAME: contoso-traders-sag-mi-kv-access
 
 jobs:
   provision-infrastructure:

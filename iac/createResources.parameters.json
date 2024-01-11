@@ -6,10 +6,10 @@
       "value": "localadmin"
     },
     "prefixHyphenated": {
-      "value": "contoso-traders-sg"
+      "value": "contoso-traders-sag"
     },
     "prefix": {
-      "value": "contosotraderssg"
+      "value": "contosotraderssag"
     }
   }
 }
