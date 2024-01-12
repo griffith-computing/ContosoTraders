@@ -44,7 +44,8 @@ const CartService = {
         };
 
         const cartItems = {
-            "cartItemId": '2',
+            //"cartItemId": '2', <- This causes issues with CosmosDB, as it uses the cartItemId as PK for the records
+            "cartItemId": crypto.randomUUID(),
             "email": detailProduct.email,
             "productId": detailProduct.id,
             "name": detailProduct.name,
